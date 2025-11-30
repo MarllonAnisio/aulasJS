@@ -88,3 +88,78 @@ const marllon = {
 }
 
 marllon.saudacao();
+
+/** 
+ * entendendo como criar múltiplos objetos em JavaScript
+ * para criar múltiplos objetos com a mesma estrutura em JavaScript, podemos usar funções construtoras ou classes (introduzidas no ES6)
+ * exemplo usando função construtora:
+ * 
+ * function Pessoa(nome, idade, profissao) {
+ *   this.nome = nome;
+ *   this.idade = idade;
+ *   this.profissao = profissao;
+ * }    
+ * const pessoa1 = new Pessoa("Ana", 25, "Designer");
+ * const pessoa2 = new Pessoa("Bruno", 28, "Engenheiro");
+ * nesse exemplo, criamos uma função construtora chamada 'Pessoa' e usamos a palavra-chave 'new' para criar novas instâncias do objeto
+ * exemplo usando classe:
+ * 
+ * class Pessoa {
+ *  constructor(nome, idade, profissao) {
+ *   this.nome = nome;
+ *   this.idade = idade;
+ *  this.profissao = profissao;
+ * }
+ * }    
+ * const pessoa1 = new Pessoa("Ana", 25, "Designer");
+ * const pessoa2 = new Pessoa("Bruno", 28, "Engenheiro");
+ * nesse exemplo, usamos a sintaxe de classe para definir a estrutura do objeto e criar instâncias
+ * ambas as abordagens permitem criar múltiplos objetos com a mesma estrutura de forma eficiente
+ * em resumo, para criar múltiplos objetos em JavaScript, podemos usar funções construtoras ou classes
+ * ambas as técnicas facilitam a criação de objetos com propriedades e métodos semelhantes
+ * com return voce pode retornar um objeto de uma função tambem
+ * exemplo:
+ * 
+ * function criarPessoa(nome, idade, profissao) {
+ *   return {
+ *    nome: nome,
+ *   idade: idade,
+ *   profissao: profissao
+ *   };
+ * }
+ * const pessoa1 = criarPessoa("Carlos", 32, "Médico");
+ * const pessoa2 = criarPessoa("Mariana", 29, "Advogada");
+ * nesse exemplo, a função 'criarPessoa' retorna um novo objeto com as propriedades fornecidas  
+ * seria um pouco parecido com o uso de construtores em Java
+ * padrão de projeto Factory Method. 
+ */
+
+function criarPessoa(nome, idade, profissao) {
+    return {
+        nome: nome,
+        idade: idade,
+        profissao: profissao,
+        apresentar(){
+            console.log(`Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e sou ${this.profissao}.`);
+        }
+    };
+}
+const pessoa1 = criarPessoa("Emily", 20, "Fullstack Developer");
+
+const pessoa2 = criarPessoa("Marllon", 21, "Backend Developer");
+
+console.log(pessoa1.apresentar());
+console.log(pessoa2.apresentar());
+
+
+
+
+
+
+
+
+
+/** 
+ * fim da explicação sobre objetos em JavaScript com base até a aula 32 da seção 2 do curso: 
+ * https://www.udemy.com/share/1026xa3@7YhU0ePL66gnw33LPAFQtPzHa2b46YiGY-fIhg5xFzvK6dVfWs1ackL_yUABw8Q4lw==/
+ */
