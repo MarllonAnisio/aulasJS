@@ -141,16 +141,29 @@ function criarPessoa(nome, idade, profissao) {
         profissao: profissao,
         apresentar(){
             console.log(`Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e sou ${this.profissao}.`);
-        }
+        },
+        incrementartIdade() {
+            this.idade++;
+        },
+        falarIdade(){
+            console.log(`Minha idade é ${this.idade} anos.`);
+        },
     };
 }
 const pessoa1 = criarPessoa("Emily", 20, "Fullstack Developer");
 
 const pessoa2 = criarPessoa("Marllon", 21, "Backend Developer");
 
-console.log(pessoa1.apresentar());
-console.log(pessoa2.apresentar());
+pessoa1.apresentar(); // Olá, meu nome é Emily, tenho 20 anos e sou Fullstack Developer.
+pessoa2.apresentar(); // Olá, meu nome é Marllon, tenho 21 anos e sou Backend Developer.
 
+
+pessoa1.incrementartIdade();
+pessoa1.falarIdade();
+pessoa2.incrementartIdade();
+pessoa2.falarIdade();
+pessoa1.apresentar(); // Olá, meu nome é Emily, tenho 21 anos e sou Fullstack Developer.
+pessoa2.apresentar(); // Olá, meu nome é Marllon, tenho 22 anos e sou Backend Developer.
 
 
 
