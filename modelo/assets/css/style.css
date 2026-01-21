@@ -60,3 +60,11 @@ form button:hover{
 form button:active{
     background: var(--primary-color-darker);
 }
+.paragrafo-resultado{
+    background-color: rgb(109, 255, 182);
+    padding: 10px 20px;
+}
+.bad-result{
+    background-color: rgb(255, 109, 109);
+    padding: 10px 20px;
+}
