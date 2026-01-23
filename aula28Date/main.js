@@ -16,13 +16,41 @@
 //const dataMaisUmDia = new Date(dataAtual.getTime() + umDia);
 //console.log("Data atual mais 1 dia:", dataMaisUmDia.toString());
 
-const dataAtual = new Date("2019-4-20 20:15:59.100");
+// const dataAtual = new Date("2019-4-20 20:15:59.100");
 
-console.log("Dia:", dataAtual.getDate());
-console.log("Mês:", dataAtual.getMonth() + 1); // Adiciona 1 porque os meses são indexados a partir de 0
-console.log("Ano:", dataAtual.getFullYear());
-console.log("Hora:", dataAtual.getHours());
-console.log("Minutos:", dataAtual.getMinutes());
-console.log("Segundos:", dataAtual.getSeconds());
-console.log("Milissegundos:", dataAtual.getMilliseconds());
-console.log("Dia da semana:", dataAtual.getDay());
+// console.log("Dia:", dataAtual.getDate());
+// console.log("Mês:", dataAtual.getMonth() + 1); // Adiciona 1 porque os meses são indexados a partir de 0
+// console.log("Ano:", dataAtual.getFullYear());
+// console.log("Hora:", dataAtual.getHours());
+// console.log("Minutos:", dataAtual.getMinutes());
+// console.log("Segundos:", dataAtual.getSeconds());
+// console.log("Milissegundos:", dataAtual.getMilliseconds());
+// console.log("Dia da semana:", dataAtual.getDay());
+function zeroAEsquerda(num){
+    return num >= 10 ? num : `0${num}`;
+}
+
+function formataData(data){
+    const dia = zeroAEsquerda(data.getDate());
+    const mes = zeroAEsquerda(data.getMonth() + 1); // Meses começam do zero
+    const ano = zeroAEsquerda(data.getFullYear());
+    const hora = zeroAEsquerda(data.getHours());
+    const minutos = zeroAEsquerda(data.getMinutes());
+    const segundos = zeroAEsquerda(data.getSeconds());
+
+    return `${dia}/${mes}/${ano} ${hora}:${minutos}:${segundos}`;
+}
+//criando uma data atual
+const dataAtual = new Date();
+/** 
+ * Chamando a função formataData para formatar a data atual
+ */
+formataData(dataAtual);
+
+/**
+ * Armazenando o resultado formatado em uma variável
+ */
+const dataFormatada = formataData(dataAtual);
+
+// Exibindo a data formatada no console
+console.log(dataFormatada);
