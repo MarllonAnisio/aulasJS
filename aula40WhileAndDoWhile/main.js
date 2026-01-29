@@ -15,12 +15,14 @@ while (contador < 5) {
     contador++;
 }
 console.log('--- Exemplo de do...while ---');
-contador = 0; // resetando o contador para o exemplo do do...while
+contador = 5; // resetando o contador para o exemplo do do...while
+
 // Exemplo de do...while
 do {
     console.log(`Contador (do...while): ${contador}`);
     contador++;
-} while (contador < 5);
+    console.log(`Valor do contador após incremento: ${contador}`);
+} while (contador < 5); // condição falsa, mas o bloco de código executa uma vez
 
 /**
  * diferença prática entre while e do while
@@ -31,9 +33,13 @@ do {
 // fazer um numero, random entre 0 e 10
 
 function random(min, max) {
-    return Math.random() * (max - min) + min;
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 console.log('--- Exemplo prático de while ---');
-let numero = Math.floor(random(0, 100));
-console.log(`Número gerado (while): ${numero}`);
+let numero = random(0, 10);
+
+while (numero !== 5) {
+    console.log(`Número (while): ${numero} - Não é 5, gerando outro número...`);
+    numero = random(0, 10);
+}
