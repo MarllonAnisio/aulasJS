@@ -18,3 +18,4 @@ const ePaisagemArrow = (altura, largura) => largura === altura ? "é um quadrado
 console.log(ePaisagemArrow(1080, 1920));
 console.log(ePaisagemArrow(1920, 1080));
 console.log(ePaisagemArrow(1080, 1080));
+
