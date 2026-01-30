@@ -6,51 +6,74 @@
 const iniciarBtn = document.getElementById("iniciar");
 const pararBtn = document.getElementById("parar");
 const contadorDisplay = document.getElementById("contador");
+
 const box = document.querySelector(".box");
 const conteiner = document.querySelector(".conteiner");
 
-let hora;
+let horaAtual;
 let horaComeco;
 let intervaloId = null;
 
 iniciarBtn.addEventListener("click", () => {
-    iniciandoTrabalho();
+
     if (intervaloId === null) {
-        intervaloId = setInterval(() => {           
-            hora = new Date();
-            contadorDisplay.textContent = hora.toLocaleTimeString();
+        horaComeco = new Date();
+
+        intervaloId = setInterval(() => {
+
+            horaAtual = new Date();
+            contadorDisplay.textContent = horaAtual.toLocaleTimeString();
+            mudarCorFundo();
+
         }, 1000);
     }
-    mudarCorFundo();
 });
-
 pararBtn.addEventListener("click", () => {
+
+        try{
+            if(intervaloId === null)
+                throw new Error("O contador não está em execução.");
+
+        }catch(error){
+                window.alert(error.message);
+                return;
+            }
         pararContador();
         const horaFim = new Date();
 
-        let elementoTexto = criarElementoTexto();
-        elementoTexto.innerText = `tempo trabalhado: ${calcularTempoTrabalhado(horaComeco, horaFim)}`;
-        box.appendChild(elementoTexto);
-
-        horaFim = null;
-        horaComeco = null;
+        const elementoTexto = criarElementoTexto();
+        // CORREÇÃO: Tratamento caso o usuário pare muito rápido
+        if (horaComeco) {
+            elementoTexto.textContent = `Tempo trabalhado: ${calcularTempoTrabalhado(horaComeco, horaFim)}`;
+            box.appendChild(elementoTexto);
+        }
 });
-
 function mudarCorFundo(){
-    if(hora.getHours() <= 20){
-        document.body.style.backgroundColor = "";
-    }
-    if(hora.getHours() >= 8  &  hora.getMinutes() >= 25){
-        document.body.style.backgroundColor = "white";
-    }
+    if(!horaAtual) return;
 
+    const horas = horaAtual.getHours();
+    const minutos = horaAtual.getMinutes();
+
+    let estadoCorAtual = document.body.style.backgroundColor;
+    let corDesejada = "";
+
+    if(horas >= 22)   
+        corDesejada = "darkblue";
+
+    else if(horas < 22) 
+        corDesejada = "";
+
+    if(estadoCorAtual !== corDesejada){
+        console.log("Mudando cor de fundo para:", corDesejada || "padrão");
+        document.body.style.backgroundColor = corDesejada;
+
+        estadoCorAtual = corDesejada;
+    }
 }
-
 function pararContador(){
     clearInterval(intervaloId);
     intervaloId = null;
 } 
-
 function criarElementoTexto(){
     const p = document.createElement("p");
     return p;
@@ -68,9 +91,6 @@ function calcularTempoTrabalhado(horaComeco, horaFim) {
     let diferencaEmHoras = Math.floor(diferencaEmMs / (1000 * 60 * 60));
     let diferencaEmMinutos = Math.floor((diferencaEmMs % (1000 * 60 * 60)) / (1000 * 60));
     let diferencaEmSegundos = Math.floor((diferencaEmMs % (1000 * 60)) / 1000);
-    return `${diferencaEmHoras} horas, ${diferencaEmMinutos} minutos e ${diferencaEmSegundos} segundos`;
-}
-function iniciandoTrabalho(){
-    hora = new Date();
-    horaComeco = hora;
+    
+    return `${diferencaEmHoras}h ${diferencaEmMinutos}m ${diferencaEmSegundos}s`;
 }
