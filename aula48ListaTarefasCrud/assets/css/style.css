@@ -2,14 +2,11 @@
 :root{
     --primary-color:  hsl(132, 85%, 23%);
     --primary-color-darker: #333
-
 }
 * {
     box-sizing: border-box;
     outline: 0;
-
 }
-
 body{
     margin: 0;
     padding: 0;
@@ -28,7 +25,6 @@ body{
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-
 form input, form label, form button{
     display: block;
     width: 100%;
@@ -39,7 +35,6 @@ form input{
     font-size: 24px;
     height: 30px;
     padding: 0 20px;
-
 }
 
 form input:focus {
