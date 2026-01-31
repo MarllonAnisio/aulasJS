@@ -1,0 +1,155 @@
+
+:root{
+    --primary-color:  hsl(132, 85%, 23%);
+    --primary-color-darker: #333
+
+}
+* {
+    box-sizing: border-box;
+    outline: 0;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.conteiner{
+    max-width: 640px;
+    margin: 50px auto;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+form input, form label, form button{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input{
+    font-size: 24px;
+    height: 30px;
+    padding: 0 20px;
+
+}
+
+form input:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+form button{
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 70;
+    height: 40px;
+    cursor:pointer
+}
+form button:hover{
+    background: var(--primary-color-darker);
+
+}
+form button:active{
+    background: var(--primary-color-darker);
+}
+.paragrafo-resultado{
+    background-color: rgb(109, 255, 182);
+    padding: 10px 20px;
+}
+.bad-result{
+    background-color: rgb(255, 109, 109);
+    padding: 10px 20px;
+}
+.listaTarefas{
+    max-width: 550px;
+    margin: 50px auto;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+input {
+    width: 70%; /* Largura confortável */
+    padding: 12px 15px; /* Altura e Lateral (Respiro) */
+    font-size: 16px; /* Tamanho legível */
+    border: 2px solid #ddd; /* Borda suave da cor cinza */
+    border-radius: 8px; /* arredondando os cantos */
+    transition: all 0.3s ease; /* Animação suave, clicar e sair do campo de escrita */
+}
+
+/* Estado de Foco ao clicar dentro do campo  */
+input:focus {
+    border-color: #6200ea; /* Muda a cor da borda */
+    box-shadow: 0px 0px 8px rgba(98, 0, 234, 0.2); /* Sombra suave (Glow) */
+}
+button {
+    padding: 12px 24px; /* Botão gordinho é mais fácil de clicar */
+    background-color: #6200ea; /* Cor de destaque */
+    color: white; /* Texto branco */
+    font-size: 16px;
+    font-weight: bold;
+    border: none; /* Remove borda padrão feia */
+    border-radius: 8px; /* Combina com o input */
+    cursor: pointer; /* OBRIGATÓRIO: Transforma o mouse na mãozinha */
+    transition: background-color 0.3s, transform 0.1s; /* Suavidade */
+}
+
+/* deixar o mouse encima do botão faz com que ele ganhe destaque*/
+button:hover {
+    background-color: #3700b3; /* Escurece um pouco */
+}
+
+/* ao clicar no botão o mesmo diminui dando efeito de toque */
+button:active {
+    transform: scale(0.96); /* Diminui levemente o tamanho do botão */
+}
+
+ul.tarefas{
+    list-style-type: none;
+    padding: 0;
+}
+ul.tarefas li{
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-button: 1px slid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.texto-tarefa {
+    /* Se o texto for muito longo, quebra a linha em vez de estourar a tela */
+    word-break: break-all; 
+    font-size: 18px;
+    color: #333;
+    flex: 1; /* Empurra os botões para a direita */
+}
+.bnt-acao{
+    margin-left: 5px;
+    cursor: pointer;
+}
+.apagar{
+    background-color: #ff4d4d; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 4px;
+}
+.editar{
+    background-color: #4da6ff; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 4px;
+}
