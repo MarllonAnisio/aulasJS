@@ -9,6 +9,7 @@ import {
 } from './modules/ui-factory.js';
 
 import { salvarTarefas } from './modules/storage.js';
+import { retornarTarefas } from './modules/storage.js'; 
 
 // SELETORES
 const inputTarefa = document.querySelector('.inputTarefa');
@@ -93,3 +94,11 @@ function criarTarefaDOM(textoInput) {
 
     salvarTarefas(tarefas);
 }
+function carregarTarefasSalvas(){
+    const listaDeTarefas = retornarTarefas();
+
+    for(let texto of listaDeTarefas){
+        criarTarefaDOM(texto);
+    }
+}
+carregarTarefasSalvas();
