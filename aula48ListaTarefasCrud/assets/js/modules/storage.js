@@ -19,3 +19,12 @@ export function salvarTarefas(ulTarefas) {
     const tarefasJSON = JSON.stringify(listaDeTarefas);
     localStorage.setItem('tarefas', tarefasJSON);
 }
+
+export function retornarTarefas(){
+    const tarefas = localStorage.getItem('tarefas');
+
+    if(!tarefas) return [];
+
+    return JSON.parse(tarefas);
+
+}
