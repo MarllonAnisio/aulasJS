@@ -77,3 +77,36 @@ console.log(funcaoTipoVariavelEmRecebimento(33,false, 6));
 
 console.log(funcaoTipoVariavelEmRecebimento(33,33,333,333, 6));
 
+
+//podemos fazer desestruturação:
+
+function desestruturacao([a1, a2, a3]){
+    return a1 + a2 + a3;
+}
+const listaDesestruturacao = [34, 44,69,77,89,11];
+console.log(desestruturacao(listaDesestruturacao));
+
+
+
+//outra maneira
+
+/**
+ * 
+ * como trabalhado antes esses ... é pegando o resto, seria como passar varios valores porem a partir de um ponto é o resto,
+ * nesse caso o ultimo valor é oacumulador, o resto que vier depois dele vai virar uma lista
+ */
+function funcao3(operador, acumulador, ...numeros){
+    for(let numero of numeros){
+        if(operador === "+")  acumulador += numero;
+        if(operador === "-")  acumulador -= numero;
+        if(operador === "/")  acumulador /= numero;
+        if(operador === "*")  acumulador *= numero;
+    }
+    console.log(`no array tinha ${numeros.length} e o retorno a partir do operador ${operador} é: ${acumulador}`);
+    return acumulador;
+}
+console.log("---------------funcao3--------------");
+funcao3("+", 0, 77,88,99,0.66,7.7,70);
+funcao3("-", 0, 77,88,99,0.66,7.7,70);
+funcao3("/", 1, 77,88,99,0.66,7.7,70);
+funcao3("*", 1, 77,88,99,0.66,7.7,70);
