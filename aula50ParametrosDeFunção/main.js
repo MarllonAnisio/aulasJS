@@ -31,3 +31,49 @@ const lista = [0,60,70,3654,66,7,8,9,3,334,56,["marllon"]];
 
 testandoArguments(lista);
 testandoArguments(0,60,70,3654,66,7,8,9,3,334,56);
+
+
+
+// vamos pra sacanagem
+/**
+ * 
+ * @param a  valor que deve vir para a função
+ * @param b valor que ja tem pre definido
+ * @param c valor que  deve vir para a função
+ */
+function funcaoTipoVariavelEmRecebimento(a, b, c){
+    b = b || 2; // b se não for undefined ou null ele recebe o valor que vem do do parametro, se não ele recebe o valor pre definido
+    return a + b*c
+    
+}
+/**
+ * caso perfeito, chegou os 3 parametros
+ */
+console.log(funcaoTipoVariavelEmRecebimento(14,10, 2));
+/**
+ * chegou um parametro quebrado, ele vai usar o 2 como padrão
+ */
+console.log(funcaoTipoVariavelEmRecebimento(10,"", 4));
+
+/**
+ * reconehce o undefined, vai usar o padrão
+ */
+console.log(funcaoTipoVariavelEmRecebimento(33,undefined, 6));
+
+console.log(funcaoTipoVariavelEmRecebimento(33,null, 6));
+
+console.log(funcaoTipoVariavelEmRecebimento(33,0, 6));
+
+/**
+ * pelo parametro não estar vazio, ele acaba tentando multiplicar usando uma string para multiplicar, nesse caso dá errado
+ */
+console.log(funcaoTipoVariavelEmRecebimento(33, "undefined" , 6));
+
+console.log(funcaoTipoVariavelEmRecebimento(33, 30 , 5));
+
+console.log(funcaoTipoVariavelEmRecebimento(33,true, 6));
+
+console.log(funcaoTipoVariavelEmRecebimento(33,false, 6));
+
+console.log(funcaoTipoVariavelEmRecebimento(33,33,333,333, 6));
+
