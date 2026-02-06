@@ -5,44 +5,82 @@
 
 //explicando com timeout
 
-function rand(min = 1000, max = 15000){
+function rand(min = 1000, max = 5000){
     const num = Math.random() * (max - min) + min;
     return Math.floor(num)
 }
-function funcao(){
+const carro = {
+    lataria: false,
+    rodas: false,
+    motor: false,
+    pintura: false,
+    situacao(){
+        console.log(` sutuação do carro: lataria feita: ${this.lataria} rodas implantadas: ${this.rodas} motor implantado: ${this.motor} pintura feita: ${this.pintura}`)
+    }
+}
+function funcaoLataria(callback){
     setTimeout( 
         function(){
-            console.log("Dale Marcio");
+           carro.lataria = true;
+           carro.situacao();
+           if(callback) 
+                callback();
         }, 
         rand()
     );
 }
-function funcao2(){
+function funcaoRodas(callback){
     setTimeout( 
         function(){
-            console.log("Dale MARLLLLLONM");
+            carro.rodas = true;
+            carro.situacao();
+            if(callback) 
+                callback();
         }, 
         rand()
     );
 }
-function funcao3(){
+function funcaoMotor(callback){
     setTimeout( 
         function(){
-            console.log("Dale wanderleeey");
+            carro.motor = true;
+            carro.situacao();
+            if(callback) 
+                callback();
         }, 
         rand()
     );
 }
-function funcao4(){
+function funcaoPintura(callback){
     setTimeout( 
         function(){
-            console.log("Dale erikson");
+            carro.pintura = true;
+            carro.situacao();
+            if(callback) 
+                callback();
         }, 
         rand()
     );
 }
 
-funcao();
-funcao2();
-funcao3();
-funcao4();
+funcaoLataria(
+    function(){
+        funcaoMotor(
+            function(){
+                funcaoRodas(
+                    function(){
+                        funcaoPintura(
+                            function(){
+                                console.log("-----------------------------ACABOOOU---------------------------------");
+                            }
+                        );
+                        
+                    }
+                );
+            }
+        );
+    }
+);
+
+
+    
