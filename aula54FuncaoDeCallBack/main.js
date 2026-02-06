@@ -5,7 +5,7 @@
 
 //explicando com timeout
 
-function rand(min = 1000, max = 5000){
+function rand(min = 1000, max = 1000){
     const num = Math.random() * (max - min) + min;
     return Math.floor(num)
 }
@@ -63,24 +63,45 @@ function funcaoPintura(callback){
     );
 }
 
-funcaoLataria(
-    function(){
-        funcaoMotor(
-            function(){
-                funcaoRodas(
-                    function(){
-                        funcaoPintura(
-                            function(){
-                                console.log("-----------------------------ACABOOOU---------------------------------");
-                            }
-                        );
+// funcaoLataria(
+//     function(){
+//         funcaoMotor(
+//             function(){
+//                 funcaoRodas(
+//                     function(){
+//                         funcaoPintura(
+//                             function(){
+//                                 console.log("-----------------------------ACABOOOU---------------------------------");
+//                             }
+//                         );
                         
-                    }
-                );
-            }
-        );
-    }
-);
+//                     }
+//                 );
+//             }
+//         );
+//     }
+// );
+//console.log("-----------------------------ACABOOOU---------------------------------");
+
+/**
+ * uma naneira para evitar o caos de chamados e o metodo não ficar parecendo um  Hadouken
+ */
+
+function latariaCallback(){
+    funcaoMotor(MotorCallback()); 
+}
+function MotorCallback(){
+    funcaoRodas(rodasCallback());
+}
+function rodasCallback(){
+    funcaoPintura(pinturaCallback());
+}
+function pinturaCallback(){
+     console.log("-----------------------------ACABOOOU---------------------------------");
+}
+
+funcaoLataria(latariaCallback());
+
 
 
     
