@@ -4,33 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <section class="conteiner">
-        <h1>AULA</h1>
+        <h1>AULA57 Calculadora</h1>
+        <table class="calculadora">
+            
+            <tr>
+                <td colspan="4" ><input type="text" class="display"></td>
+            </tr>
 
-        <form action="/" id="form" method="POST">
+            <tr>
+                <td><button class="btn btn-clear">C</button></td>
+                <td><button class="btn btn-num">(</button></td>
+                <td><button class="btn btn-num">)</button></td>
+                <td><button class="btn btn-num">/</button></td>
 
-            <p><br>
-            <p>
 
-            <label for="peso"></label>
-            <input type="text" id="peso" name="peso">
+            </tr>
+            <tr>
+                <td><button class="btn btn-num">7</button></td>
+                <td><button class="btn btn-num">8</button></td>
+                <td><button class="btn btn-num">9</button></td>
+                <td><button class="btn btn-num">*</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-num">4</button></td>
+                <td><button class="btn btn-num">5</button></td>
+                <td><button class="btn btn-num">6</button></td>
+                <td><button class="btn btn-num">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-num">1</button></td>
+                <td><button class="btn btn-num">2</button></td>
+                <td><button class="btn btn-num">3</button></td>
+                <td><button class="btn btn-num">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-num">.</button></td>
+                <td><button class="btn btn-num">0</button></td>
+                <td><button class="btn btn-del">&laquo;</button></td>
+                <td><button class="btn btn-eq">=</button></td>
+            </tr>
+        </table>
 
-            <label for="altura"></label>
-            <input type="text" id="altura" name="altura">
-
-            <button type="submit">Enviar</button>
-        </form>
-        <div id="resultado"></div>
     </section>
-
-
-
-
 
     <script src="./assets/js/main.js"></script>
 </body>
