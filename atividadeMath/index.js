@@ -1,9 +1,0 @@
-let valor = window.prompt("Digite um número qualquer:");
-valor = Number(valor);
-document.body.innerHTML = `<h1>Seu número é ${valor}</h1>`;
-document.body.innerHTML += `<br>A raiz quadrada é: ${Math.sqrt(valor)}`;
-document.body.innerHTML += `<br>É inteiro? ${Number.isInteger(valor)}`;
-document.body.innerHTML += `<br>É NaN: ${Number.isNaN(valor)}`;
-document.body.innerHTML += `<br>Arredondando para baixo: ${Math.floor(valor)}`;
-document.body.innerHTML += `<br>Arredondando para cima: ${Math.ceil(valor)}`;
-document.body.innerHTML += `<br>Com duas casas decimais: ${valor.toFixed(2)}`;
