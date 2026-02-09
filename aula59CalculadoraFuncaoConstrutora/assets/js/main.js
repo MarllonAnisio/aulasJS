@@ -4,13 +4,13 @@
 function Calculadora(){
     this.display = document.querySelector(".display");
 
-    this.inicia = function(){
+    this.inicia = () =>{
         this.cliqueButton();
         this.pressionaBackSpace();
         this.pressionaEnter();
     }
 
-    this.pressionaBackSpace = function() {
+    this.pressionaBackSpace = () =>{
         this.display.addEventListener('keydown', e => {
             if (e.keyCode === 8) {
                 e.preventDefault();
@@ -19,15 +19,15 @@ function Calculadora(){
         });
     }
 
-    this.pressionaEnter = function() {
+    this.pressionaEnter = () => {
         this.display.addEventListener('keyup', e => {
             if (e.keyCode === 13) {
-                this.realizaConta();
+                this.realizarConta();
             }
         });
     }
 
-    this.realizarConta = function(){
+    this.realizarConta = () => {
         let conta = this.display.value;
         try{
             conta = eval(conta);
@@ -43,13 +43,12 @@ function Calculadora(){
         }
     }
 
-    this.cliqueButton = function(){
+    this.cliqueButton = () =>{
         document.addEventListener('click', e => {
             const el = e.target;
             if(el.classList.contains('btn-num')){
                 this.btnPararDisplay(el.innerText)
-            }
-                            
+            }         
             if(el.classList.contains("btn-clear")){
                 this.clearDisplay();
             }
@@ -65,15 +64,16 @@ function Calculadora(){
         });
     }
 
-    this.clearDisplay = function(){
+    this.clearDisplay = () =>{
         this.display.value = "";
     }
         
-    this.btnPararDisplay = function(valor){
-        this.display.value += valor;
+    this.btnPararDisplay = (el) =>{
+        this.display.value += el;
+        this.display.focus();
     }
 
-    this.btnApagarUmCaracter = function(){
+    this.btnApagarUmCaracter = () =>{
         this.display.value  = this.display.value.slice(0, -1);
     }
 
