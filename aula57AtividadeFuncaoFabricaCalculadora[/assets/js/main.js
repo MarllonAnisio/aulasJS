@@ -7,7 +7,6 @@ function criaCalculadora(){
             this.cliqueButton();
             this.pressionaBackSpace();
             this.pressionaEnter();
-
         },
 
         pressionaBackSpace() {
