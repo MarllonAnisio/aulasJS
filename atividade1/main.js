@@ -1,0 +1,22 @@
+const nome = "Marllon";
+const sobrenome = "Anisio Martins Camelo";
+const idade = 21;
+const peso = 90.5;
+const alturaEmMt = 1.85;
+const isEstudante = true;
+const nomeCompleto = `${nome} ${sobrenome}`;
+let imc = peso /(alturaEmMt * alturaEmMt);
+let dataAtual = new Date();
+let anoAtual = dataAtual.getFullYear();
+let anoNascimento =  anoAtual - idade;
+
+console.log("Olá, ", nome, "! Seja bem-vindo ao meu projeto JavaScript.");
+console.log("Hello from atividade1/index.js");
+console.log("Meu nome completo é:", nomeCompleto);
+console.log("Tenho", idade, "anos.");
+console.log("Meu peso é:", peso, "kg.");
+console.log("Minha altura é:", alturaEmMt, "m.");
+console.log("Sou estudante:", isEstudante);
+console.log("Meu IMC é:", imc.toFixed(2));
+console.log("Ano atual é:", anoAtual);
+console.log("Ano de nascimento é:", anoNascimento);
