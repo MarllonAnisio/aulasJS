@@ -28,10 +28,15 @@ class Dispositivo {
 
 }
 
+const _preco = Symbol('preco');
+const _tipoTela = Symbol('Tipo da Tela');
 class SmartPhone extends Dispositivo() {
     constructor(nome, preco, tipoTela) {
         super(nome);
         this[_preco] = preco;
         this[_tipoTela] = tipoTela
+    }
+    ligar(){ // isso é como se vosse um override estou usando aqui nessa classe o ligar do smartphone e não o ligar herdado
+        console.log('estou ligando papai')
     }
 }
