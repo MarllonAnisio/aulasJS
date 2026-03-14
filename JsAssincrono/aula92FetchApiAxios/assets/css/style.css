@@ -68,3 +68,8 @@ form button:active{
     background-color: rgb(255, 109, 109);
     padding: 10px 20px;
 }
+
+table {
+    width: 100%;
+    
+}
