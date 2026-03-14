@@ -8,21 +8,20 @@ document.addEventListener('click', e => {
     }
 });
 async function carregaPagina(el) {
-
+    
     try{
-     
         const href = el.getAttribute('href');
         const response = await fetch(href);
-
-        if(response.status < 200 || response.status > 200) throw new Error('valeime bixão');
         
+        if(response.status < 200 || response.status > 299){
+            throw new Error('ERROR')
+        }
         const html = await response.text();
         carregaResultado(html);
-    
-    }catch(err){
-        console.log(e)
-    }
 
+    }catch(err){
+        console.log(err)
+    }
 }
 function carregaResultado(response) {
     const resultado = document.querySelector('#resultado');
