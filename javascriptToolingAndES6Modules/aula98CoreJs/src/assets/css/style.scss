@@ -1,0 +1,117 @@
+:root {
+    --primary-color: hsl(170, 89%, 29%);
+    --primary-color-darker: #333;
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+
+.conteiner {
+    max-width: 640px;
+    margin: 50px auto;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+
+    
+    input[type="number"] {
+        font-size: 24px;
+        height: 40px; 
+        padding: 0 20px;
+        width: 100%; 
+        margin-bottom: 20px; 
+        border: 1px solid #ccc;
+        border-radius: 5px;
+
+        &:focus {
+            outline: 2px solid var(--primary-color);
+        }
+    }
+
+    
+    input[type="checkbox"] {
+        width: 20px;  
+        height: 20px; 
+        cursor: pointer;
+        margin-left: 10px; 
+    }
+
+    
+    button {
+        display: block; 
+        margin-top: 10px;
+        border-radius: 5px;
+        border: none; 
+        background: var(--primary-color);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700; 
+        height: 40px;
+        width: 100%; // Adicionei para ele ficar largão e bonito
+        cursor: pointer;
+        transition: background 0.3s ease; 
+
+        &:hover {
+            background: var(--primary-color-darker);
+        }
+
+        &:active {
+            transform: scale(0.98); 
+            background: var(--primary-color-darker);
+        }
+    }
+}
+
+
+form {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+
+    input {
+        font-size: 24px;
+        height: 40px; // Aumentei um pouco para harmonia visual
+        padding: 0 20px;
+        width: 100%; // Boa prática para formulários responsivos
+
+        // O "&" é a mágica do SCSS!
+        &:focus {
+            outline: 2px solid var(--primary-color);
+        }
+    }
+
+    button {
+        display: block; // Garante que o botão respeite margens
+        margin-top: 10px;
+        border-radius: 5px;
+        border: none; // Botões vêm com borda padrão feia
+        background: var(--primary-color);
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700; // Corrigi de 70 para 700 (bold padrão)
+        height: 40px;
+        cursor: pointer;
+        transition: background 0.3s ease; // Toque de mestre: suavidade
+
+        &:hover {
+            background: var(--primary-color-darker);
+        }
+
+        &:active {
+            transform: scale(0.98); // Efeito visual de clique real
+            background: var(--primary-color-darker);
+        }
+    }
+}
