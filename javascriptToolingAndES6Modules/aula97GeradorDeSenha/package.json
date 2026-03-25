@@ -1,0 +1,27 @@
+{
+  "name": "aula94webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
+    "babel-loader": "^10.1.1",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^7.0.0"
+  },
+  "dependencies": {
+    "core-js": "^3.48.0",
+    "css-loader": "^7.1.4",
+    "regenerator-runtime": "^0.14.1",
+    "style-loader": "^4.0.0"
+  }
+}
